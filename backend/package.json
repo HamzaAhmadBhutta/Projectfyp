@@ -4,11 +4,11 @@
   "description": "Mern fyp",
   "main": "server.js",
   "scripts": {
-    "start": "node backend/server"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.17.1"
   }
 }
