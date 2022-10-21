@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import color from "colors";
-
+import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import productRoutes from "./routes/productRoutes.js";
 
 dotenv.config();
@@ -16,6 +16,13 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/products", productRoutes);
+
+////
+/// not found error handle by middle war
+app.use(notFound);
+
+/// @middle ware conver req ,res html to json
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
