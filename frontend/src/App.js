@@ -29,12 +29,32 @@ const App = () => {
           <Container>
             <Routes>
               <Route path="/" element={<HomeScreen />} exact></Route>
+              <Route
+                path="/search/:keyword"
+                element={<HomeScreen />}
+                exact
+              ></Route>
+              <Route
+                path="/page/:pageNumber"
+                element={<HomeScreen />}
+                exact
+              ></Route>
+              <Route
+                path="/search/:keyword/page/:pageNumber"
+                element={<HomeScreen />}
+                exact
+              ></Route>
+
               <Route path="/product/:id" element={<ProductScreen />}></Route>
               <Route path="/cart/:id?" element={<CartScreen />}></Route>
               <Route path="/profile" element={<ProfileScreen />}></Route>
               <Route
                 path="/admin/productlist"
-                element={<ProductListScreen />}
+                element={<ProductListScreen exact />}
+              ></Route>
+              <Route
+                path="/admin/productlist/:pageNumber"
+                element={<ProductListScreen exact />}
               ></Route>
 
               <Route path="/register" element={<RegisterScreen />}></Route>
